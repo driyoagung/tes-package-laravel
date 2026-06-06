@@ -13,6 +13,7 @@ class LandingPageTest extends TestCase
         $response
             ->assertOk()
             ->assertSee('Tes Package Laravel')
-            ->assertSee('tes-package::landing');
+            ->assertSee('tes-package::landing')
+            ->assertSee('Buka Notes CRUD');
     }
 }
