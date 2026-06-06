@@ -2,7 +2,7 @@
 
 Package Laravel 12 sederhana untuk belajar membuat package sendiri. Setelah package ini di-install di project Laravel lain, aplikasi tersebut akan mendapat halaman landing page di route `/tes-package` dan Notes CRUD di route `/tes-package/notes`.
 
-Walkthrough lengkap install dan cara pakainya ada di [.docs/package-install-walkthrough.md](/home/agung/www/tes-package/package-repo/.docs/package-install-walkthrough.md:1).
+Walkthrough lengkap install dan cara pakainya ada di [.docs/package-install-walkthrough.md]
 
 ## Isi package
 
