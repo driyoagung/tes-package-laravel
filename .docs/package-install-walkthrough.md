@@ -21,21 +21,21 @@ Hasil akhirnya: project Laravel tujuan bisa membuka halaman landing page sederha
 
 File yang paling penting di repo ini:
 
-- [composer.json](/home/agung/www/tes-package/package-repo/composer.json:1)
-- [src/TesPackageLaravelServiceProvider.php](/home/agung/www/tes-package/package-repo/src/TesPackageLaravelServiceProvider.php:1)
-- [routes/web.php](/home/agung/www/tes-package/package-repo/routes/web.php:1)
-- [src/Http/Controllers/LandingPageController.php](/home/agung/www/tes-package/package-repo/src/Http/Controllers/LandingPageController.php:1)
-- [src/Http/Controllers/NoteController.php](/home/agung/www/tes-package/package-repo/src/Http/Controllers/NoteController.php:1)
-- [src/Models/Note.php](/home/agung/www/tes-package/package-repo/src/Models/Note.php:1)
-- [database/migrations/2026_06_06_000000_create_tes_package_notes_table.php](/home/agung/www/tes-package/package-repo/database/migrations/2026_06_06_000000_create_tes_package_notes_table.php:1)
-- [resources/views/landing.blade.php](/home/agung/www/tes-package/package-repo/resources/views/landing.blade.php:1)
-- [resources/views/notes/index.blade.php](/home/agung/www/tes-package/package-repo/resources/views/notes/index.blade.php:1)
+- [composer.json](../composer.json)
+- [src/TesPackageLaravelServiceProvider.php](../src/TesPackageLaravelServiceProvider.php)
+- [routes/web.php](../routes/web.php)
+- [src/Http/Controllers/LandingPageController.php](../src/Http/Controllers/LandingPageController.php)
+- [src/Http/Controllers/NoteController.php](../src/Http/Controllers/NoteController.php)
+- [src/Models/Note.php](../src/Models/Note.php)
+- [database/migrations/2026_06_06_000000_create_tes_package_notes_table.php](../database/migrations/2026_06_06_000000_create_tes_package_notes_table.php)
+- [resources/views/landing.blade.php](../resources/views/landing.blade.php)
+- [resources/views/notes/index.blade.php](../resources/views/notes/index.blade.php)
 
 ## Cara kerja package ini
 
 ### 1. Composer mengenali package
 
-Di [composer.json](/home/agung/www/tes-package/package-repo/composer.json:1), package ini punya beberapa bagian penting:
+Di [composer.json](../composer.json), package ini punya beberapa bagian penting:
 
 ```json
 {
@@ -80,7 +80,7 @@ Bagian ini penting karena setelah package di-install, Laravel akan otomatis memb
 
 ### 3. Service provider memuat route dan view package
 
-Di [src/TesPackageLaravelServiceProvider.php](/home/agung/www/tes-package/package-repo/src/TesPackageLaravelServiceProvider.php:1):
+Di [src/TesPackageLaravelServiceProvider.php](../src/TesPackageLaravelServiceProvider.php):
 
 ```php
 public function boot(): void
@@ -101,7 +101,7 @@ Karena itu host app bisa menjalankan migration package, route package bisa aktif
 
 ### 4. Route package didaftarkan
 
-Di [routes/web.php](/home/agung/www/tes-package/package-repo/routes/web.php:1):
+Di [routes/web.php](../routes/web.php):
 
 ```php
 Route::middleware('web')->group(function (): void {
@@ -123,7 +123,7 @@ Penjelasannya:
 
 ### 5. Controller merender Blade view
 
-Di [src/Http/Controllers/LandingPageController.php](/home/agung/www/tes-package/package-repo/src/Http/Controllers/LandingPageController.php:1):
+Di [src/Http/Controllers/LandingPageController.php](../src/Http/Controllers/LandingPageController.php):
 
 ```php
 public function __invoke()
@@ -136,7 +136,7 @@ Karena controller ini invokable, Laravel langsung memanggil method `__invoke()` 
 
 ### 6. Model package terhubung ke tabel package
 
-Di [src/Models/Note.php](/home/agung/www/tes-package/package-repo/src/Models/Note.php:1):
+Di [src/Models/Note.php](../src/Models/Note.php):
 
 ```php
 class Note extends Model
@@ -154,7 +154,7 @@ Model ini tetap berada di package, tetapi saat dijalankan dari project host, kon
 
 ### 7. Migration package membuat tabel di database host
 
-Di [database/migrations/2026_06_06_000000_create_tes_package_notes_table.php](/home/agung/www/tes-package/package-repo/database/migrations/2026_06_06_000000_create_tes_package_notes_table.php:1), package membuat tabel:
+Di [database/migrations/2026_06_06_000000_create_tes_package_notes_table.php](../database/migrations/2026_06_06_000000_create_tes_package_notes_table.php), package membuat tabel:
 
 ```php
 Schema::create('tes_package_notes', function (Blueprint $table): void {
@@ -169,9 +169,9 @@ File migration ini tidak disalin ke folder `database/migrations` project host. L
 
 ### 8. Blade view menampilkan landing page dan CRUD package
 
-Di [resources/views/landing.blade.php](/home/agung/www/tes-package/package-repo/resources/views/landing.blade.php:1), halaman dirender dengan Tailwind CDN. Jadi package ini belum butuh asset build atau publish asset tambahan.
+Di [resources/views/landing.blade.php](../resources/views/landing.blade.php), halaman dirender dengan Tailwind CDN. Jadi package ini belum butuh asset build atau publish asset tambahan.
 
-Untuk CRUD, view berada di folder [resources/views/notes](/home/agung/www/tes-package/package-repo/resources/views/notes/index.blade.php:1) dan dipanggil memakai namespace `tes-package::notes.*`.
+Untuk CRUD, view berada di folder [resources/views/notes](../resources/views/notes/index.blade.php) dan dipanggil memakai namespace `tes-package::notes.*`.
 
 ## Step cara pakai di project Laravel lain
 
