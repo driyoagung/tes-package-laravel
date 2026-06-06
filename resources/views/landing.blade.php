@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tes Package Laravel</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="min-h-screen bg-zinc-950 text-white antialiased">
-    <main class="min-h-screen">
-        <section class="mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 py-16 sm:px-8">
+@extends('tes-package::layout')
+
+@section('title', 'Tes Package Laravel')
+
+@section('content')
+        <section class="flex min-h-[calc(100vh-10rem)] w-full flex-col justify-center py-16">
             <div class="max-w-3xl">
                 <p class="mb-4 inline-flex border border-emerald-400/40 bg-emerald-400/10 px-3 py-1 text-sm font-medium text-emerald-200">
                     Laravel 12 Package
@@ -20,8 +15,18 @@
 
                 <p class="mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
                     Package ini berhasil terpasang dan route dari package sudah aktif di aplikasi Laravel kamu.
-                    Halaman ini dirender dari Blade view milik package.
+                    Halaman ini dirender dari Blade view milik package, dan sekarang package ini juga membawa Notes CRUD berbasis database.
                 </p>
+
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <a href="{{ route('tes-package.notes.index') }}" class="border border-emerald-400 bg-emerald-400 px-5 py-3 text-sm font-semibold text-zinc-950 hover:bg-emerald-300">
+                        Buka Notes CRUD
+                    </a>
+
+                    <a href="{{ route('tes-package.notes.create') }}" class="border border-zinc-700 px-5 py-3 text-sm font-semibold text-zinc-100 hover:border-zinc-500">
+                        Buat Note
+                    </a>
+                </div>
 
                 <div class="mt-10 grid gap-4 sm:grid-cols-3">
                     <div class="border border-zinc-800 bg-zinc-900/70 p-5">
@@ -41,6 +46,4 @@
                 </div>
             </div>
         </section>
-    </main>
-</body>
-</html>
+@endsection
